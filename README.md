@@ -1,11 +1,10 @@
-# Issue
+## Issue 1
 
-## Problem
 ```
 error: ‘FAST’ was not declared in this scope
 ```
 
-## Solution
+### Solution
 
 Open `ORB_SLAM/src/ORBextractor.cc`.
 
@@ -14,12 +13,11 @@ Add the include header at the top.
 #include <opencv2/opencv.hpp>
 ```
 
-## Reference
+### Reference
 https://github.com/raulmur/ORB_SLAM/issues/44#issuecomment-130812898
 
-# Issue
+## Issue 2
 
-## Problem
 ```
 /usr/local/include/eigen3/Eigen/src/Core/util/StaticAssert.h:32:40: error: static assertion failed: YOU_MIXED_DIFFERENT_NUMERIC_TYPES__YOU_NEED_TO_USE_THE_CAST_METHOD_OF_MATRIXBASE_TO_CAST_NUMERIC_TYPES_EXPLICITLY
      #define EIGEN_STATIC_ASSERT(X,MSG) static_assert(X,#MSG);
@@ -27,7 +25,7 @@ https://github.com/raulmur/ORB_SLAM/issues/44#issuecomment-130812898
 Thirdparty/g2o/g2o/solvers/linear_solver_eigen.h
 ```
 
-## Solution 
+### Solution 
 
 ```
 typedef Eigen::PermutationMatrix<Eigen::Dynamic, Eigen::Dynamic, SparseMatrix::Index> PermutationMatrix
@@ -37,19 +35,18 @@ to
 typedef Eigen::PermutationMatrix<Eigen::Dynamic, Eigen::Dynamic, int> PermutationMatrix
 ```
 
-## Reference
+### Reference
 
 https://blog.csdn.net/danmeng8068/article/details/83827245
 
 
-# Issue
+## Issue
 
-## Probelm
 ```
 Undefined reference to symbol '_ZN5boost6system15system_categoryEv
 ```
 
-## Solution
+### Solution
 Add `lboost_system` to CMakeList.txt
 ```
 set(LIBS
@@ -63,21 +60,26 @@ ${PROJECT_SOURCE_DIR}/../../../lib/libORB_SLAM2.so
 )
 ```
 
-## Reference
+### Reference
 https://github.com/raulmur/ORB_SLAM2/issues/494#issuecomment-354346674
 
 
-# Issue
-
-## Problem
+## Issue
+```
 [ERROR] Failed to contact master at [localhost:11311]. Retrying...
+```
 
-## Solution
+### Solution
 
 - Open another shell, and run `roscore`
 
+## Issue
+rviz
 
-# Run Example
+### Reference
+https://marquistj13.github.io/MyBlog/2018/12/ubuntu16.04-install-orbslam/
+
+## Run Example
 
 - Down example image sequence and save as XXXXX.bag
 - One shell run `roscore` 
